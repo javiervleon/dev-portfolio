@@ -1,0 +1,50 @@
+---
+import At from "./icons/At.astro";
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-12 bg-gray-800 w-full">
+  <div class="align-left mx-16 flex justify-between items-start">
+    <div>
+      <span class="text-xl font-semibold w-1/2">Contacto</span>
+      <ul>
+        <li class="my-4">
+          <a
+            href="https://linkedin.com/in/javiervleon"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center"
+            ><LinkedIn /> <span class="ml-2">LinkedIn</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/javiervleon"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center"
+            ><GitHub /> <span class="ml-2">GitHub</span></a
+          >
+          <a
+            href="mailto:javiervleon99@gmail.com"
+            class="mt-4 flex items-center"
+            ><At /> <span class="ml-2">javiervleon99@gmail.com</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="hidden md:flex flex-col gap-x-10 opacity-80 items-end">
+      <a href="#top" class="my-1">Inicio</a>
+      <a href="#sobre-mi" class="my-1">Sobre mí</a>
+      <a href="#experiencia" class="my-1">Experiencia</a>
+      <a href="#proyectos" class="my-1">Proyectos</a>
+      <a href="#contacto" class="my-1">Contacto</a>
+    </div>
+  </div>
+  <span class="flex flex-row justify-center"
+    >© {currentYear} | javiervleon. Todos los derechos reservados</span
+  >
+</footer>

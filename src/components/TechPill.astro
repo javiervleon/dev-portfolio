@@ -1,0 +1,21 @@
+---
+interface Props {
+  className?: string;
+  Icon?: any; // Aceptamos un componente de Astro/React
+}
+
+const { className, Icon } = Astro.props;
+---
+
+<span
+  class={`
+    flex items-center gap-x-2 
+    rounded-full border border-white/10 
+    px-2 py-1 
+    text-xs font-medium text-white
+    ${className}
+  `}
+>
+  {Icon && <Icon class="size-4" />}
+  <slot />
+</span>

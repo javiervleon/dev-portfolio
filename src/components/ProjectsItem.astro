@@ -1,0 +1,88 @@
+---
+import TechPill from "./TechPill.astro";
+
+// Imports de tus íconos (ajusta los nombres de archivo si es necesario)
+import React from "./icons/React.astro";
+import AstroIcon from "./icons/Astro.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Angular from "./icons/Angular.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+
+interface Props {
+  title: string;
+  techs: string[];
+  image: string;
+  link?: string;
+}
+
+// Objeto de configuración completo
+const TAGS: Record<string, { color: string; Icon?: any }> = {
+  React: {
+    color: "bg-blue-500/15",
+    Icon: React,
+  },
+  Astro: {
+    color: "bg-orange-500/15",
+    Icon: AstroIcon,
+  },
+  Tailwind: {
+    color: "bg-cyan-500/15",
+    Icon: Tailwind,
+  },
+  Angular: {
+    color: "bg-red-600/15",
+    Icon: Angular,
+  },
+  Bootstrap: {
+    color: "bg-purple-700/15",
+    Icon: Bootstrap,
+  },
+};
+
+const { title, image, techs, link } = Astro.props;
+---
+
+<div
+  class="w-full md:w-[350px] border rounded-2xl border-gray-700 bg-white/5 p-4 hover:scale-105 transition flex flex-col"
+>
+  <h2 class="text-xl font-semibold mb-3">{title}</h2>
+
+  {
+    link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener"
+        class="block overflow-hidden rounded-lg"
+      >
+        <img
+          src={image}
+          alt={`Proyecto ${title}`}
+          class="w-full h-48 object-cover hover:opacity-90 transition"
+        />
+      </a>
+    )
+  }
+
+  <h4 class="text-sm font-semibold text-center mt-4 mb-2 text-gray-300">
+    Tecnologías utilizadas
+  </h4>
+
+  <div class="flex flex-wrap justify-center gap-2">
+    {
+      techs.map((techName) => {
+        // Buscamos la config en TAGS, si no existe usamos valores por defecto
+        const tagConfig = TAGS[techName] || {
+          color: "bg-gray-500",
+          Icon: null,
+        };
+
+        return (
+          <TechPill className={tagConfig.color} Icon={tagConfig.Icon}>
+            {techName}
+          </TechPill>
+        );
+      })
+    }
+  </div>
+</div>

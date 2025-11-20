@@ -1,0 +1,30 @@
+---
+import ProjectsItem from "./ProjectsItem.astro";
+
+const PROJECTS = [
+  {
+    title: "Mubee (Dashboard de películas)",
+    techs: ["Angular", "Tailwind"],
+    image: "mubee.png",
+    link: "https://javiervleon.github.io/mubee-angular/",
+  },
+  {
+    title: "Hegoval (Landing Page)",
+    techs: ["Astro", "React", "Tailwind"],
+    image: "hegoval.png",
+    link: "https://hegoval.cl",
+  },
+  {
+    title: "DryFacilitys (Landing Page)",
+    techs: ["React", "Bootstrap"],
+    image: "dryfacilitys.png",
+    link: "https://dryfacilitys.cl",
+  },
+];
+---
+
+<div
+  class="flex flex-col md:flex-row flex-wrap gap-6 justify-center items-start"
+>
+  {PROJECTS.map((project) => <ProjectsItem {...project} />)}
+</div>

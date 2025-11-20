@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import At from "../components/icons/At.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Archive from "../components/icons/Archive.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import Notebook from "../components/icons/Notebook.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Portfolio de javiervleon - Desarrollador de Software y Programador Web con +1 año de experiencia"
+  description="Contrata a javiervleon para crear tu aplicación web o móvil. Desarrollador de Software. Enfocado en las necesidades del cliente."
+>
+  <main class="px-4">
+    <SectionContainer class="flex items-center flex-col py-10 lg:py-44 pb-24">
+      <img
+        class="rounded-full size-32 lg:size-38 mb-12 object-cover"
+        src="hero.jpg"
+        alt="javiervleon photo"
+      />
+      <h1
+        class="text-3xl lg:text-5xl md:text-4xl font-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola! Soy Javier <a
+          href="https://linkedin.com/in/javiervleon"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-2xl text-pretty max-w-[700px]">
+        <span>+2 años de experiencia en desarrollo.</span>
+        <span class="text-blue-200/90">Desarrollador de Software. </span><span
+          class="text-red-200/90"
+          >Del sur de Chile 🇨🇱.
+        </span>
+        <span
+          >Amante de la tecnología, siempre buscando aprender y crecer
+          profesionalmente.</span
+        >
+      </h2>
+      <ul>
+        <nav class="flex gap-4 mt-8 flex-wrap lg:justify-start justify-center">
+          <SocialPill href="https://linkedin.com/in/javiervleon">
+            <LinkedIn class="size-4 lg:size-6" />
+            LinkedIn
+          </SocialPill>
+          <SocialPill href="https://github.com/javiervleon">
+            <GitHub class="size-4 lg:size-6" />
+            GitHub
+          </SocialPill>
+          <SocialPill href="mailto:javiervleon99@gmail.com">
+            <At class="size-4 lg:size-6" />
+            javiervleon99@gmail.com
+          </SocialPill>
+        </nav>
+      </ul>
+    </SectionContainer>
+    <SectionContainer class="pb-24" id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer class="pb-24" id="proyectos">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Archive class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+      <Notebook class="size-7" />
+      Contacto
+    </h2>
+    <Contact />
+    <SectionContainer class="pb-24" id="contacto" />
+  </main>
 </Layout>

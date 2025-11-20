@@ -1,0 +1,61 @@
+<div
+  class="rounded-2xl border border-gray-700 bg-white/5 p-5 flex items-center justify-center"
+>
+  <form
+    class="contact-form mb-3 w-full max-w-md"
+    action="https://formspree.io/f/xvgllepa"
+    method="POST"
+  >
+    <div class="form-group mb-4">
+      <label for="name" class="block mb-2">Nombre</label>
+      <input
+        class="bg-white/10 rounded-full w-full px-4 py-1"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Tu Nombre"
+        required
+      />
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="email" class="block mb-2">Email</label>
+      <input
+        class="bg-white/10 rounded-full w-full px-4 py-1"
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="tu@email.com"
+      />
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="subject" class="block mb-2">Asunto</label>
+      <input
+        class="bg-white/10 rounded-full w-full px-4 py-1"
+        type="text"
+        id="subject"
+        name="subject"
+        placeholder="Consulta, cotización, proyecto, etc."
+        required
+      />
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="message" class="block mb-2">Mensaje</label>
+      <textarea
+        class="bg-white/10 rounded-xl w-full px-2 py-1"
+        id="message"
+        name="message"
+        rows="5"
+        required></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-white/15 rounded-full border-gray-700 w-full py-1 font-semibold hover:bg-white/20 transition"
+      >Enviar mensaje</button
+    >
+  </form>
+</div>

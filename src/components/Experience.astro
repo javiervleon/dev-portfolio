@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Desarrollador Freelance",
+    description:
+      "Desarrollo de aplicaciones web enfocado en las necesidades del cliente.",
+  },
+  {
+    date: "Marzo 2025 - Mayo 2025",
+    title: "Desarrollo Web (Práctica Profesional)",
+    description:
+      "Contribución en el desarrollo y documentación de Intranet y Sistema de Trazabilidad para el proceso de producción de la empresa.",
+  },
+  {
+    date: "Enero 2024 - Febrero 2025",
+    title: "Desarrollo y Soporte TI (Práctica Intermedia)",
+    description:
+      "Desarrollo de sistema de inventario simple, mantenimiento de hardware y software, instalación de equipos y gestión de incidencias.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
